@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//这是指向首页的路由
+Route::get('/','PagesController@root')->name('root');
