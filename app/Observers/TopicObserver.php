@@ -22,6 +22,8 @@ class TopicObserver
     //帖子再保存的时候生成简介
     public function saving(Topic $topic)
     {
+        $topic->body = clean($topic->body, 'user_topic_body');
+
         $topic->excerpt = make_excerpt($topic->body);
     }
 }
